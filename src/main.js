@@ -14,7 +14,7 @@ document.querySelectorAll(".operator").forEach(item => item.addEventListener("cl
   operator = e.target.id;
 }));
 
-fetch('../out/main.wasm').then(response =>
+fetch('../wasm-calculator/out/main.wasm').then(response =>
   response.arrayBuffer()
 ).then(bytes => WebAssembly.instantiate(bytes)).then(results => {
   instance = results.instance;
